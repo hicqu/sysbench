@@ -95,7 +95,7 @@ pad CHAR(60) DEFAULT '' NOT NULL,
 
    if oltp_create_secondary then
      print("Creating secondary indexes on 'sbtest" .. i .. "'...")
-     db_query("CREATE INDEX k_" .. i .. " on sbtest" .. i .. "(k)")
+     print("skip secondary indexes by hand")
    end
 
 end

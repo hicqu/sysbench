@@ -21,7 +21,7 @@ function thread_init()
 
    ranges = ""
    for i = 1,number_of_ranges do
-      ranges = ranges .. "k BETWEEN ? AND ? OR "
+      ranges = ranges .. "id BETWEEN ? AND ? OR "
    end
    
    -- Get rid of last OR and space.
@@ -60,5 +60,5 @@ end
 function set_vars_ranges()
    set_vars()
    number_of_ranges = number_of_ranges or 10
-   delta = random_ranges_delta or 5
+   delta = random_ranges_delta or 20
 end
