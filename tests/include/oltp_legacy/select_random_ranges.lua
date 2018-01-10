@@ -28,7 +28,7 @@ function thread_init()
    ranges = string.sub(ranges, 1, string.len(ranges) - 3)
 
    stmt = db_prepare([[
-        SELECT count(k)
+        SELECT COUNT(*)
           FROM sbtest1
           WHERE ]] .. ranges .. [[
         ]])
@@ -60,5 +60,8 @@ end
 function set_vars_ranges()
    set_vars()
    number_of_ranges = number_of_ranges or 10
-   delta = random_ranges_delta or 20
+   -- delta = random_ranges_delta or 4096
+   -- delta = random_ranges_delta or 32
+   -- delta = random_ranges_delta or 5000
+   delta = random_ranges_delta or 1
 end
